@@ -37,23 +37,10 @@ export const Skills = ({id} : SectionProps) => {
                             <div className="border-2 bg-purple-600 text-purple-100 text-sm font-bold w-18 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-purple-500 transition-all duration-300 cursor-default border-purple-600">PHP</div>
                             <div className="border-2 bg-red-600 text-red-100 text-sm font-bold w-36 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-red-500 transition-all duration-300 cursor-default border-red-600 relative">
                                 Java (Spring Boot)
-                                <span className="absolute -top-1 -right-1 bg-gray-700 text-white text-xs px-1 rounded">Nociones</span>
-                            </div>
-                            <div className="border-2 bg-green-600 text-green-100 text-sm font-bold w-28 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-green-500 transition-all duration-300 cursor-default border-green-600 relative">
-                                Django
-                                <span className="absolute -top-1 -right-1 bg-gray-600 text-white text-xs px-1 rounded">Fundamentos</span>
                             </div>
                             <div className="border-2 bg-sky-600 text-sky-100 text-sm font-bold w-32 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-sky-500 transition-all duration-300 cursor-default border-sky-600">PostgreSQL</div>
                             <div className="border-2 bg-orange-600 text-orange-100 text-sm font-bold w-24 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-500 transition-all duration-300 cursor-default border-orange-600">MySQL</div>
                             <div className="border-2 bg-blue-600 text-blue-100 text-sm font-bold w-24 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-blue-500 transition-all duration-300 cursor-default border-blue-600">PL/pgSQL</div>
-                            <div className="border-2 bg-emerald-600 text-emerald-100 text-sm font-bold w-20 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-emerald-500 transition-all duration-300 cursor-default border-emerald-600 relative">
-                                C
-                                <span className="absolute -top-1 -right-1 bg-gray-700 text-white text-xs px-1 rounded">Estructurada</span>
-                            </div>
-                            <div className="border-2 bg-violet-600 text-violet-100 text-sm font-bold w-36 h-10 flex items-center justify-center text-center rounded-xl shadow-lg hover:shadow-xl hover:bg-violet-500 transition-all duration-300 cursor-default border-violet-600 relative">
-                                Apache Cordova
-                                <span className="absolute -top-1 -right-1 bg-gray-700 text-white text-xs px-1 rounded">Legacy</span>
-                            </div>
                         </div>
                     </div>
                     <div id="skills-tools" className="border-2 border-purple-400 rounded-2xl w-90 h-90 p-3 shadow-xl flex flex-col">
