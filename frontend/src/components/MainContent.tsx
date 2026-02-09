@@ -7,7 +7,7 @@ import { PersonalIntro } from '../pages/PersonalIntro';
 import { Footer } from './Footer';
 
 export const MainContent = () => {  return (
-    <div className="text-default p-6 lg:p-0 ml-auto mr-auto max-w-3xl text-left">
+    <div className="text-default p-4 sm:p-6 lg:p-0 mx-auto w-full max-w-3xl text-left">
       <PersonalIntro/>
       <About id = "about"/>
       <Experience id='experience'/>

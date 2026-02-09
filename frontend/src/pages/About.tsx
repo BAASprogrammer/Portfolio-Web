@@ -15,21 +15,21 @@ export const About = ({id} : SectionProps) => {
                     </p>
                 </div>
 
-                <div className='flex items-center mt-6 gap-8 flex-col lg:flex-row'>
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl max-w-lg w-10/12 lg:w-full h-40 hover:shadow-2xl transition-all duration-300 hover:border-blue-400/50 hover:-translate-y-1">
+                <div className='flex flex-col lg:flex-row items-center gap-6 lg:gap-8 mt-6'>
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl w-full hover:shadow-2xl transition-all duration-300 hover:border-blue-400/50 hover:-translate-y-1">
                         <div className="flex items-center justify-center mb-3">
-                            <span className='text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300'>Frontend</span>
+                            <span className='text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors'>Frontend</span>
                         </div>
-                        <p className="text-center text-gray-300 hover:text-white transition-colors duration-300">
+                        <p className="text-center text-gray-300 hover:text-white transition-colors text-sm md:text-base">
                             HTML, CSS, JavaScript, TypeScript, React y Tailwind CSS
                         </p>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl max-w-lg w-10/12  lg:w-full h-40 hover:shadow-2xl transition-all duration-300 hover:border-green-400/50 hover:-translate-y-1">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl w-full hover:shadow-2xl transition-all duration-300 hover:border-green-400/50 hover:-translate-y-1">
                         <div className="flex items-center justify-center mb-3">
-                            <span className='text-2xl font-bold text-green-400 hover:text-green-300 transition-colors duration-300'>Backend</span>
+                            <span className='text-xl md:text-2xl font-bold text-green-400 hover:text-green-300 transition-colors'>Backend</span>
                         </div>
-                        <p className="text-center text-gray-300 hover:text-white transition-colors duration-300">
+                        <p className="text-center text-gray-300 hover:text-white transition-colors text-sm md:text-base">
                             PHP, PostgreSQL y nociones en Spring Boot
                         </p>
                     </div>

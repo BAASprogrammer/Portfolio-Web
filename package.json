@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview"
+  },
+  "dependencies": {
+    "@vercel/node": "^5.5.33",
+    "resend": "^6.9.1"
+  }
+}

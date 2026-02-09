@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd frontend && npm run build",
+  "devCommand": "cd frontend && npm run dev",
+  "installCommand": "npm install && cd frontend && npm install",
+  "outputDirectory": "frontend/dist",
+  "framework": "vite",
+  "functions": {
+    "api/**/*.{js,ts}": {
+      "maxDuration": 30
+    }
+  }
+}

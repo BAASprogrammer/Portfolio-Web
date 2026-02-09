@@ -14,11 +14,41 @@ export const ContactForm = ({id} : SectionProps) => {
     }
   }
   
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const fields = getFields(event.currentTarget);
-    const responseForm = validateFields(fields);
-    setResponse(responseForm ? "Envío de correo exitoso" : "")
+    const isValid = validateFields(fields);
+    
+    if (isValid) {
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: fields.name,
+            email: fields.email,
+            subject: fields.subject,
+            message: fields.message,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
+          event.currentTarget.reset();
+          setErrors({});
+          setTimeout(() => setResponse(''), 5000);
+        } else {
+          setResponse('Error al enviar el correo. Intenta de nuevo.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        setResponse('Error al conectar. Intenta de nuevo.');
+      }
+    }
   }
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -77,7 +107,7 @@ export const ContactForm = ({id} : SectionProps) => {
         <h1 className='text-center text-3xl font-bold'>
           Ponte en contacto
         </h1>
-        <form className='mt-5 w-3/4 ml-auto mr-auto' onSubmit={handleSubmit} noValidate>
+        <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate>
           <span className='text-center'>
             Actualmente estoy buscando nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, haré todo lo posible por responderte.
           </span>
