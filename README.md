@@ -55,4 +55,4 @@ MIT
 
 ---
 
-Desarrollado con por **BAASprogrammer**
+Desarrollado por **BAASprogrammer**
