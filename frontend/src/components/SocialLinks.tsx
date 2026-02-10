@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export const SocialLinks = () => {
     return (
-        <div className='flex gap-2 justify-center items-center mt-4'>
+        <div className='flex gap-2 justify-center items-center mt-2 md:mt-4'>
             <a className='btn-social' href="https://github.com/BAASprogrammer" title='GitHub' target='_blank' rel='noopener noreferrer'>
                 <FaGithub />
             </a>

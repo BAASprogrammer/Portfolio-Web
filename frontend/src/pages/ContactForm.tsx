@@ -148,7 +148,7 @@ export const ContactForm = ({id} : SectionProps) => {
             {errors.message && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.message}</span>}
           </div>
           <div className='flex justify-center'>
-            <button type='submit' className="btn-animated btn btn-primary btn-glow-hover mt-4 text-center w-1/3 cursor-pointer" title='Enviar Mensaje'>Enviar Mensaje</button> 
+            <button type='submit' className="btn-animated mt-4 px-4 py-2 text-sm text-center cursor-pointer font-medium text-white bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-[length:200%_100%] rounded-lg shadow-md hover:shadow-[0_0_15px_3px_rgba(236,72,153,0.5)] transition-all duration-300 animate-gradient-x" title='Enviar Mensaje'>Enviar Mensaje</button> 
           </div>
           {response && <div className="text-cyan-400 text-sm ml-2.5 text-center mt-4 font-bold">{response}</div>}
         </form>
