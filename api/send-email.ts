@@ -41,14 +41,13 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify({
-        _subject: `Desde portafolio web: ${subject}`,
-        _replyto: email,
-        Nombre: name,
-        Email: email,
-        Asunto: subject,
-        Mensaje: message,
+        name: name,
+        email: email,
+        _subject: `Portafolio: ${subject}`,
+        message: `Asunto: ${subject}\n\n${message}`,
       }),
     });
 
