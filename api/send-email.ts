@@ -1,6 +1,18 @@
 import { Resend } from 'resend';
 import { VercelRequest, VercelResponse } from '@vercel/node';
+
+// Validar que la API key exista
+if (!process.env.RESEND_API_KEY) {
+  console.error('❌ RESEND_API_KEY no está configurada en las variables de entorno');
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Función para validar email
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   if (req.method !== 'POST') {
@@ -14,6 +26,18 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ error: 'Campos requeridos faltantes' });
     }
+
+    // Validar formato de email
+    if (!isValidEmail(email)) {
+      return res.status(400).json({ error: 'Email inválido' });
+    }
+
+    // Validar que los campos no sean solo espacios
+    if (name.trim().length === 0 || subject.trim().length === 0 || message.trim().length === 0) {
+      return res.status(400).json({ error: 'Los campos no pueden estar vacíos' });
+    }
+
+    console.log('📧 Intentando enviar email desde:', email);
 
     const result = await resend.emails.send({
       from: 'noreply@resend.dev', // Cambiar a tu dominio verificado en Resend
@@ -31,12 +55,21 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     });
 
     if (result.error) {
-      return res.status(400).json({ error: result.error });
+      console.error('❌ Error de Resend:', result.error);
+      return res.status(400).json({ 
+        error: 'Error al enviar el correo',
+        details: result.error?.message || 'Error desconocido'
+      });
     }
 
+    console.log('✅ Email enviado exitosamente:', result.data?.id);
     return res.status(200).json({ success: true, data: result.data });
   } catch (error) {
-    console.error('Error:', error);
-    return res.status(500).json({ error: 'Error al enviar el correo' });
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('❌ Error en send-email:', errorMessage);
+    return res.status(500).json({ 
+      error: 'Error al enviar el correo',
+      details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+    });
   }
 };
