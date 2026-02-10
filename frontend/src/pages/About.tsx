@@ -41,9 +41,7 @@ export const About = ({id} : SectionProps) => {
                         Me enfoco en crear aplicaciones que no solo sean funcionales, sino también escalables, mantenibles y con una excelente experiencia de usuario. Valoró el trabajo colaborativo, el aprendizaje continuo y el código limpio.
                     </p>
                 </div>
-
-                <div className="text-center">
-                    <p className="text-lg leading-relaxed max-w-4xl mx-auto text-gray-300 italic relative px-4 py-4 bg-gradient-to-r from-pink-500/5 via-purple-500/5 to-blue-500/5 border border-pink-500/20 rounded-lg hover:border-pink-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/20">
-                    "Me enfoco en crear aplicaciones funcionales y bien diseñadas, aprender nuevas tecnologías y colaborar en equipos para entregar proyectos de calidad."
-                    </p>
-                </div>
+            </div>
+        </section>
+    )
+}
