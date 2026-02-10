@@ -21,6 +21,53 @@ Portafolio web personal desarrollado con React, TypeScript y Vite.
 - Formulario de contacto funcional
 - Secciones: Introducción, Sobre mí, Experiencia, Habilidades, Proyectos y Contacto
 
+## Estructura del Proyecto
+
+```
+Portfolio-Web/
+├── api/
+│   └── send-email.ts          # Serverless function para envío de emails
+├── frontend/
+│   ├── public/                 # Archivos estáticos
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── css/           # Estilos adicionales
+│   │   │   ├── fonts/         # Fuentes personalizadas
+│   │   │   └── images/        # Imágenes y previews
+│   │   ├── components/
+│   │   │   ├── AnimatedBackground.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Introduction.tsx
+│   │   │   ├── MainContent.tsx
+│   │   │   └── SocialLinks.tsx
+│   │   ├── context/
+│   │   │   └── ScrollContext.tsx
+│   │   ├── hooks/             # Custom hooks
+│   │   ├── pages/
+│   │   │   ├── About.tsx
+│   │   │   ├── ContactForm.tsx
+│   │   │   ├── Experience.tsx
+│   │   │   ├── PersonalIntro.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   └── Skills.tsx
+│   │   ├── types/
+│   │   │   └── SectionProps.ts
+│   │   ├── App.tsx
+│   │   ├── App.css
+│   │   ├── main.tsx
+│   │   └── index.css
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── package.json
+├── vercel.json
+└── README.md
+```
+
 ## Instalación
 
 ```bash
