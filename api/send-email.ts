@@ -37,21 +37,32 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     console.log('📧 Intentando enviar email desde:', email);
 
     const formspreeId = process.env.FORMSPREE_ID;
+    
+    console.log('🔑 Formspree ID:', formspreeId ? 'configurado' : 'NO CONFIGURADO');
+    
+    const formData = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
+    
+    console.log('📝 Enviando datos:', JSON.stringify(formData));
+    
     const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        _subject: `Portafolio: ${subject}`,
-        message: `Asunto: ${subject}\n\n${message}`,
-      }),
+      body: JSON.stringify(formData),
     });
 
+    console.log('📡 Estado de respuesta:', response.status);
+    
     const data = await response.json();
+    
+    console.log('📦 Respuesta de Formspree:', JSON.stringify(data));
 
     if (!response.ok) {
       console.error('❌ Error de Formspree:', data);
