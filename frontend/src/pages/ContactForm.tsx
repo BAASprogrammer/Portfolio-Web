@@ -109,7 +109,11 @@ export const ContactForm = ({id} : SectionProps) => {
         if (apiResponse.ok) {
           console.log('✅ Email enviado exitosamente');
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
-          form.reset(); // Use the saved reference
+          // Reset form states
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
           setErrors({});
           setTimeout(() => setResponse(''), 5000);
         } else {
@@ -125,11 +129,6 @@ export const ContactForm = ({id} : SectionProps) => {
     }
   }
 
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const fields = getFields(event.currentTarget.closest("form") as HTMLFormElement);
-    validateFields(fields);
-  }
-  
   const validateFields = (fields : {
     general : string,
     name : string,
