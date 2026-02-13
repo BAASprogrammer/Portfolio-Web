@@ -4,21 +4,77 @@ import type { SectionProps } from '../types/SectionProps';
 export const ContactForm = ({id} : SectionProps) => {
   const [errors, setErrors] = useState<{[key:string]:string}>({});
   const [response, setResponse] = useState<String>('');
-  const getFields = (formElement: HTMLFormElement) => {
-    const form = new FormData(formElement)
-    return {
-      general : form.get("name") as string,
-      name    : form.get("name") as string,
-      email   : form.get("email") as string,
-      subject : form.get("subject") as string,
-      message : form.get("message") as string
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  // Reusable sanitize function
+  const sanitizeInput = (value: string, type: 'text' | 'email' | 'subject' | 'message') => {
+    switch (type) {
+      case 'text':
+        return value.replace(/[^a-zA-ZáéíóúñÁÉÍÓÚÑäëïöüÄËÏÖÜ\s]/g, '');
+      case 'email':
+        return value.replace(/[^a-zA-Z0-9@._-]/g, '');
+      case 'subject':
+        return value.replace(/[^a-zA-ZáéíóúñÁÉÍÓÚÑäëïöüÄËÏÖÜ0-9\s\-_]/g, '');
+      case 'message':
+        return value.replace(/[^a-zA-ZáéíóúñÁÉÍÓÚÑäëïöüÄËÏÖÜ0-9\s.,!?;:()\-\[\]]/g, '');
+      default:
+        return value;
     }
-  }
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handleNameBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    setName(sanitizeInput(e.target.value, 'text'));
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleEmailBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    setEmail(sanitizeInput(e.target.value, 'email'));
+  };
+
+  const handleSubjectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSubject(e.target.value);
+  };
+
+  const handleSubjectBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    setSubject(sanitizeInput(e.target.value, 'subject'));
+  };
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  };
+
+  const handleMessageBlur = (e: React.FocusEvent<HTMLTextAreaElement>) => {
+    setMessage(sanitizeInput(e.target.value, 'message'));
+  };
   
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.currentTarget; // Save form reference
-    const fields = getFields(form);
+    // Sanitize fields before submitting
+    const sanitizedName = sanitizeInput(name, 'text');
+    const sanitizedEmail = sanitizeInput(email, 'email');
+    const sanitizedSubject = sanitizeInput(subject, 'subject');
+    const sanitizedMessage = sanitizeInput(message, 'message');
+    setName(sanitizedName);
+    setEmail(sanitizedEmail);
+    setSubject(sanitizedSubject);
+    setMessage(sanitizedMessage);
+    const fields = {
+      general: sanitizedName,
+      name: sanitizedName,
+      email: sanitizedEmail,
+      subject: sanitizedSubject,
+      message: sanitizedMessage
+    };
     const isValid = validateFields(fields);
     
     if (isValid) {
@@ -117,28 +173,28 @@ export const ContactForm = ({id} : SectionProps) => {
         <h1 className='text-center text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-4'>
           Ponte en contacto
         </h1>
-        <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate>
+        <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate autoComplete='off'>
           <span className='text-center block text-gray-300 mb-6'>
             Actualmente estoy buscando nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, haré todo lo posible por responderte.
           </span>
           <div className='grid gap-4 sm:grid-cols-2'>
             <div className='flex flex-col gap-2'>
               <label htmlFor="name" className='text-blue-300 font-medium'>Nombre</label>
-              <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='name' name='name' type="text" placeholder='Tu nombre' onChange={handleOnChange}/>
+              <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='name' name='name' type="text" placeholder='Tu nombre' value={name} onChange={handleNameChange} onBlur={handleNameBlur} autoComplete="off"/>
               {errors.name && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.name}</span>}
             </div>
             <div className='flex flex-col gap-2'>
               <label htmlFor="email" className='text-blue-300 font-medium'>Correo</label>
-              <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='email' name='email' type="email" placeholder='tu@email.com' onChange={handleOnChange}/>
+              <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='email' name='email' type="email" placeholder='tu@email.com' value={email} onChange={handleEmailChange} onBlur={handleEmailBlur} autoComplete="off"/>
               {errors.email && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.email}</span>}
             </div>
           </div>
           <div className='flex flex-col gap-2'>
             <label htmlFor="subject" className='block text-purple-300 font-medium'>Asunto</label>
-            <input className='ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' id='subject' name='subject' type="text" placeholder='Asunto del mensaje' onChange={handleOnChange}/>
+            <input className='ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' id='subject' name='subject' type="text" placeholder='Asunto del mensaje' value={subject} onChange={handleSubjectChange} onBlur={handleSubjectBlur} autoComplete="off"/>
             {errors.subject && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.subject}</span>}
             <label htmlFor="message" className='block text-purple-300 font-medium'>Mensaje</label>
-            <textarea className='block ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' name='message' id='message' rows={4} placeholder='Tu mensaje...' onChange={handleOnChange}></textarea>
+            <textarea className='block ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' name='message' id='message' rows={4} placeholder='Tu mensaje...' value={message} onChange={handleMessageChange} onBlur={handleMessageBlur} autoComplete="off"></textarea>
             {errors.message && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.message}</span>}
           </div>
           {errors.general && <div className="text-pink-400 text-sm ml-2.5 text-center mt-4 font-bold">{errors.general}</div>}
