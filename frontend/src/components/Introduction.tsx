@@ -32,12 +32,17 @@ export const Introduction = () => {
                 
                 <div>
                   <p className="pb-1 hidden md:block text-gray-200 text-sm leading-relaxed foreground">
-                    <span className="text-cyan-400 font-bold">Creo</span> programas 
-                    <span className="text-pink-400 font-semibold"> accesibles</span> y 
-                    <span className="text-purple-400 font-semibold"> responsive</span> con 
-                    <span className="text-blue-400 font-semibold"> React</span>, 
-                    <span className="text-yellow-400 font-semibold"> TypeScript</span> y 
-                    <span className="text-red-400 font-semibold"> Spring Boot</span>.
+                    <span className="text-cyan-400 font-bold">Desarrollo</span> aplicaciones web 
+                    <span className="text-pink-400 font-semibold"> modernas</span>, 
+                    <span className="text-purple-400 font-semibold"> accesibles</span> y 
+                    <span className="text-blue-400 font-semibold"> escalables</span> con 
+                    <span className="text-yellow-400 font-semibold"> React</span> y 
+                    <span className="text-red-400 font-semibold"> TypeScript</span>, 
+                    combinando 
+                    <span className="text-green-400 font-semibold"> frontend</span> sólido con experiencia 
+                    <span className="text-indigo-400 font-semibold"> backend</span> en 
+                    <span className="text-orange-400 font-semibold"> PHP</span> y 
+                    <span className="text-teal-400 font-semibold"> PostgreSQL</span>.
                   </p>
                 </div>
               </div>

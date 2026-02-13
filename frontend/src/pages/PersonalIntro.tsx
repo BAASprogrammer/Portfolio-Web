@@ -24,10 +24,12 @@ export const PersonalIntro = () => {
                 Hola, mi nombre es
             </h5>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold pt-6 text-gradient-animate hover:drop-shadow-lg transition-all duration-300">Bárbara Arias</h1>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-white py-6 font-semibold hover:text-blue-200 transition-colors duration-300">Genero programas para la web.</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-white py-6 font-semibold hover:text-blue-200 transition-colors duration-300">Desarrolladora Frontend React | Full Stack</h2>
             <p className='mt-2 mb-4 text-gray-200 text-sm md:text-base leading-relaxed hover:text-white transition-colors duration-300'>
-                Desarrollo aplicaciones web claras y mantenibles, con foco en una buena experiencia y código ordenado.
-                Trabajo principalmente con <span className='text-orange-400 font-semibold hover:text-orange-300 transition-colors'>HTML</span>, <span className='text-blue-400 font-semibold hover:text-blue-300 transition-colors'>CSS</span>, <span className='text-yellow-300 font-semibold hover:text-yellow-200 transition-colors'>JavaScript</span>, <span className='text-indigo-400 font-semibold hover:text-indigo-300 transition-colors'>PHP</span> y <span className='text-blue-500 font-semibold hover:text-blue-400 transition-colors'>PostgreSQL</span>, y también me enfoco en proyectos que utilizan <span className='text-cyan-400 font-semibold hover:text-cyan-300 transition-colors'>React</span>, <span className='text-blue-600 font-semibold hover:text-blue-500 transition-colors'>TypeScript</span> y <span className='text-teal-400 font-semibold hover:text-teal-300 transition-colors'>Tailwind CSS</span>, con nociones en <span className='text-red-400 font-semibold hover:text-red-300 transition-colors'>Spring Boot</span>.
+                Desarrollo aplicaciones web modernas, accesibles y escalables con React y TypeScript, combinando una sólida experiencia frontend con base backend en PHP y PostgreSQL.
+            </p>
+            <p className="text-gray-400 text-sm mb-4">
+                📞 +56951351815 | 📧 bariassalvo@gmail.com | <a href="https://github.com/BAASprogrammer" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">GitHub</a> | <a href="https://www.linkedin.com/in/barbara-arias-salvo" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">LinkedIn</a>
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-2.5">
                 <button

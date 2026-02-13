@@ -74,7 +74,7 @@ export const ScrollProvider = ({children} : {children : ReactNode}) => {
 export const useScroll = () => {
     const context = useContext(ScrollContext);
     if (!context) {
-        throw new Error("Error al querer utilizar ScrollContext");
+        throw new Error("Error trying to use ScrollContext");
     }
     return context;
 }

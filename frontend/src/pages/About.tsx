@@ -11,7 +11,7 @@ export const About = ({id} : SectionProps) => {
             <div className="space-y-8">
                 <div className="text-center">
                     <p className='text-lg leading-relaxed max-w-3xl mx-auto text-gray-200'>
-                        Soy <span className="text-pink-400 font-semibold">Ingeniera en Computación e Informática</span> especializada en desarrollo web full stack y gestión de bases de datos. Me apasiona crear aplicaciones funcionales, bien diseñadas y accesibles.
+                        Soy <span className="text-pink-400 font-semibold">Ingeniera en Computación</span> con más de 3 años de experiencia en desarrollo de software, principalmente en backend con <span className="text-indigo-400 font-semibold">PHP</span> y <span className="text-green-400 font-semibold">PostgreSQL</span>. Actualmente me enfoco en frontend moderno con <span className="text-cyan-400 font-semibold">React</span> y <span className="text-blue-400 font-semibold">TypeScript</span>, desarrollando aplicaciones web con manejo de estado, validaciones dinámicas e integración de APIs REST. Me interesa la arquitectura, el rendimiento y la construcción de productos mantenibles y escalables.
                     </p>
                 </div>
 
@@ -30,15 +30,15 @@ export const About = ({id} : SectionProps) => {
                             <span className='text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent group-hover:from-purple-300 group-hover:to-pink-300 transition-all'>Backend</span>
                         </div>
                         <p className="text-center text-gray-300 group-hover:text-white transition-colors text-sm md:text-base">
-                            Desarrollo lógica robusta con PHP, Spring Boot y gestiono bases de datos PostgreSQL y MySQL
+                            Desarrollo lógica backend con PHP y bases de datos PostgreSQL; conocimientos básicos en Spring Boot.
                         </p>
                     </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 border border-blue-500/20 rounded-lg p-6 hover:border-blue-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                    <h3 className="text-lg font-semibold text-white mb-4">Mi enfoque</h3>
+                    <h3 className="text-lg font-semibold text-white mb-4">Mi visión</h3>
                     <p className="text-gray-300 leading-relaxed">
-                        Me enfoco en crear aplicaciones que no solo sean funcionales, sino también escalables, mantenibles y con una excelente experiencia de usuario. Valoró el trabajo colaborativo, el aprendizaje continuo y el código limpio.
+                        Me gusta crear productos digitales que sean claros, accesibles y fáciles de mantener en el tiempo. Disfruto combinar un frontend moderno con una base backend sólida para construir soluciones bien estructuradas. Me motiva seguir aprendiendo, mejorar constantemente mi código y aportar de forma colaborativa a los equipos en los que participo.
                     </p>
                 </div>
             </div>

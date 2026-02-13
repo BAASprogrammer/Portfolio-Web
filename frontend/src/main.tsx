@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-// Importar las fuentes para que Vite las procese y pueda servirlas
+// Import fonts so Vite can process and serve them
 import './assets/fonts/Inter-Regular.woff2'
 import './assets/fonts/Inter-Medium.woff2'
 import './assets/fonts/Inter-SemiBold.woff2'
 import './assets/fonts/Inter-Bold.woff2'
 
-// Importar estilos globales
+// Import global styles
 import './index.css'
 import App from './App.tsx'
 

@@ -17,7 +17,7 @@ export const ContactForm = ({id} : SectionProps) => {
   
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.currentTarget; // Guardar referencia al formulario
+    const form = event.currentTarget; // Save form reference
     const fields = getFields(form);
     const isValid = validateFields(fields);
     
@@ -53,7 +53,7 @@ export const ContactForm = ({id} : SectionProps) => {
         if (apiResponse.ok) {
           console.log('✅ Email enviado exitosamente');
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
-          form.reset(); // Usar la referencia guardada
+          form.reset(); // Use the saved reference
           setErrors({});
           setTimeout(() => setResponse(''), 5000);
         } else {
