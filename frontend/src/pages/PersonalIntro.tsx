@@ -29,7 +29,7 @@ export const PersonalIntro = () => {
                 Desarrollo aplicaciones web modernas, accesibles y escalables con React y TypeScript, combinando una sólida experiencia frontend con base backend en PHP y PostgreSQL.
             </p>
             <p className="text-gray-400 text-sm mb-4">
-                📞 +56951351815 | 📧 bariassalvo@gmail.com | <a href="https://github.com/BAASprogrammer" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">GitHub</a> | <a href="https://www.linkedin.com/in/barbara-arias-salvo" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">LinkedIn</a>
+                📞 +56951351815 | 📧 bariassalvo@gmail.com | <a href="https://github.com/BAASprogrammer" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">GitHub</a> | <a href="https://www.linkedin.com/in/barbara-arias-s" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">LinkedIn</a>
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-2.5">
                 <button
