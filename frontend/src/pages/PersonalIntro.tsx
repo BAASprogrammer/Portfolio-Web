@@ -23,7 +23,7 @@ export const PersonalIntro = () => {
             >
                 Hola, mi nombre es
             </h5>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold pt-6 text-gradient-animate hover:drop-shadow-lg transition-all duration-300">Bárbara Ariasddd</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold pt-6 text-gradient-animate hover:drop-shadow-lg transition-all duration-300">Bárbara Arias</h1>
             <h2 className="text-2xl sm:text-3xl md:text-4xl text-white py-6 font-semibold hover:text-blue-200 transition-colors duration-300">Desarrolladora Frontend React | Full Stack</h2>
             <p className='mt-2 mb-4 text-gray-200 text-sm md:text-base leading-relaxed hover:text-white transition-colors duration-300'>
                 Desarrollo aplicaciones web modernas, accesibles y escalables con React y TypeScript, combinando una sólida experiencia frontend con base backend en PHP y PostgreSQL.
