@@ -8,7 +8,7 @@ import { Footer } from './Footer';
 
 export const MainContent = () => {
   return (
-    <div className="text-default p-4 sm:p-6 mx-auto w-full max-w-4xl text-left">
+    <div className="text-default p-6 mx-auto w-full text-left">
       <PersonalIntro />
       <About id="about" />
       <Experience id='experience' />
